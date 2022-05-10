@@ -8,5 +8,8 @@ namespace ShopOnline.Web.Services.Contracts
         Task<CartItemDtos> AddItem(CartItemToAddDto cartItemToAddDto);
         Task<CartItemDtos> DeleteItem(int id);
         Task<CartItemDtos> UpdateItem(CartItemQtyUpdateDto cartItemQtyUpdateDto);
+
+        event Action<int> OnShoppingCartChanged;
+        void RaiseEventOnShoppingCartChanged(int totalQty);
     }
 }
